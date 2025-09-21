@@ -1,0 +1,75 @@
+=>Insert Data
+
+mongosh
+use lessonone
+db.createCollection("users")
+show dbs 
+show collections
+
+=>Create Document (single)
+db.users.insertOne({name:"su su",age:20,hasnrc:false});  // to lessonone
+
+=>Create Document (multi)
+
+db.users.insertMany([{name:"tun tun",age:19,hasnrc:false},{name:"zaw zaw",age:20,hasnrc:true},{name:"kyaw kyaw",age:22,hasnrc:true}]);  //to lessonone
+
+
+
+=>List Documents    //doument name should be , exmaple users
+db.users.find()
+
+db.users.insertOne({_id:"USR1001","name":"amy",age:23,hasnrc:true});
+
+db.users.insertOne({_id:"USR1002","name":"army",age:23,hasnrc:false});
+db.users.insertOne({_id:"USR1001","name":"aye mi",age:19,hasnrc:false});// E11000 duplicate key error collection: lessone.users index: _id_ dup key: { _id: "USR1001" }
+--------------------------------------------------------------
+=>Compass (how to add data) JSON  allowed
+   
+   click "ADD DATA" > "INSERT DOCUMENT" >delete all lines
+
+    {
+         name:"win win",
+         age:24,
+         hasnrc:true
+             }  // Note : if you used js object styled !> do not forget to click "format" btn
+    
+        {
+
+         "name":"zin zin",
+         "age":30,
+         "hasnrc":true
+             }
+    click "Insert"
+
+
+[
+     { "name":"win win","age":23, "hasnrc":true   },
+    { "name":"ni ni","age":23, "hasnrc":true   },
+    { "name":"lin lin ,"age":21, "hasnrc":true   },
+     { "name":"zaw zaw","age":20, "hasnrc":true   },
+      { "name":"yamin","age":19, "hasnrc":false   },
+       { "name":"aye aye","age":21, "hasnrc":true   },
+        { "name":"hnin"hnin","age":25, "hasnrc":true   },
+         { "name":"win win","age":23, "hasnrc":true   },
+          { "name":"yu yu",""age":19, "hasnrc":true   },
+           { "name":"su su","age":20, "hasnrc":true   }
+
+]
+
+show dbs
+use lessonone 
+
+db.users.insertOne({
+        name:"thura",
+        age:22,
+        hasnrc:true,
+        religion:null,
+        hoobies:["sport","reading"],
+        dob:new Date("2003-01-01"),
+        contact:{
+            no:"62 st",
+            city:"mandalay",
+            country:"myanmar"
+        }
+});
+28MT
