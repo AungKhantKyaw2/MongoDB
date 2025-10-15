@@ -8,7 +8,7 @@ db.collection.find(query,projection)
 
 
 db.collection.findOne(query)
-db.collection.findOne(query.projection)
+db.collection.findOne(query,projection)
 
 
 
